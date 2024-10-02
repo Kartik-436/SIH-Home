@@ -312,41 +312,6 @@ window.addEventListener("wheel", function (det) {
     }
 });
 
-// const numParticles = 20;
-// const particles = [];
-
-
-// for (let i = 0; i < numParticles; i++) {
-//     const particle = document.createElement("div");
-//     particle.classList.add("particle");
-//     document.body.appendChild(particle); 
-//     particles.push(particle);
-// }
-
-
-// window.addEventListener("mousemove", (event) => {
-//     particles.forEach((particle, index) => {
-        
-//         const delay = index * 0.02;
-
-//         gsap.to(particle, {
-//             x: event.clientX - particle.clientWidth / 2, 
-//             y: event.clientY - particle.clientHeight / 2, 
-//             duration: 0.5, 
-//             opacity: 1, 
-//             ease: "power3.out",
-//             delay: delay, 
-//         });
-
-        
-//         gsap.to(particle, {
-//             opacity: 0,
-//             delay: delay + 0.5, 
-//             duration: 0.7,
-//         });
-//     });
-// });
-
 gsap.from("#move", {
     duration: 1.2,
     opacity: 0,
@@ -398,5 +363,115 @@ tl2.from(".scright", {
     x: 500,
     ease: "power3.out",
 }, "anim2")
+
+
+var tl3 = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#page3",
+        scroller: "body",
+        start: "top 60%",
+        end: "top -20%",
+        scrub: 2,
+    }
+})
+
+tl3.from("#wleft", {
+    duration: 2,
+    opacity: 0,
+    x: -200,
+    ease: "power3.inout",
+}, "an1")
+
+tl3.from("#wright", {
+    duration: 2,
+    opacity: 0,
+    x: 200,
+    ease: "power3.inout",
+}, "an1")
+
+tl3.from(".wp1", {
+    
+    duration: 2,
+    opacity: 0,
+    y: 100,
+    ease: "power5.out",
+})
+
+tl3.from(".wp2", {
+    
+    duration: 2,
+    opacity: 0,
+    y: 100,
+    ease: "power5.out",
+})
+
+tl3.from(".wp3", {
+    
+    duration: 2,
+    opacity: 0,
+    y: 100,
+    ease: "power5.out",
+})
+
+tl3.from(".wp4", {
+    
+    duration: 2,
+    opacity: 0,
+    y: 100,
+    ease: "power5.out",
+})
+
+tl3.from(".wp5", {
+    
+    duration: 2,
+    opacity: 0,
+    y: 100,
+    ease: "power3.out",
+})
+
+tl3.from(".wp6", {
+    
+    duration: 2,
+    opacity: 0,
+    y: 100,
+    ease: "power3.out",
+})
+
+
+const numParticles = 30;
+const particleContainer = document.getElementById('particle-container');
+const particles = [];
+
+
+for (let i = 0; i < numParticles; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+    particle.style.opacity = 0;  
+    particles.push(particle);
+    particleContainer.appendChild(particle);
+}
+
+window.addEventListener("mousemove", (event) => {
+    particles.forEach((particle, index) => {
+        const delay = index * 0.02; 
+
+        
+        gsap.to(particle, {
+            x: event.clientX - particle.clientWidth / 2, 
+            y: event.clientY - particle.clientHeight / 2, 
+            duration: 0.5,
+            opacity: 1, 
+            ease: "power3.out",
+            delay: delay, 
+        });
+
+        
+        gsap.to(particle, {
+            opacity: 0,
+            delay: delay + 0.5, 
+            duration: 0.7,
+        });
+    });
+});
 
 

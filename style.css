@@ -18,6 +18,7 @@ body{
     height: 100%;
     width: 100%;
     position: relative;
+    cursor: none;
 }
 
 .preloader {
@@ -577,17 +578,6 @@ header {
     border-radius: 10px;
 }
 
-/* .particle {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    background-color: #B9FF66;
-    border-radius: 50%;
-    pointer-events: none;
-    opacity: 1;
-    z-index: 10000;
-} */
-
 #page3{
     width: 100%;
 }
@@ -687,8 +677,8 @@ header {
 
 .workProcessIcon{
     margin-right: 4vw;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background-color: white;
     border-radius: 50%;
     border: 2px solid black;
@@ -701,17 +691,70 @@ header {
     font-weight: 900;
 }
 
-/* 
+
 .wpinfo{
     white-space: wrap;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 2vh;
-} */
+}
+
+.open{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40vh;
+    width: 80vw;
+    background-color: #B9FF66;
+    border-radius: 42px;
+    border: 1.5px solid black;
+    box-shadow: 0px 5px 0px black;
+    position: relative;
+}
+
+.imgopen{
+    position: absolute;
+    top: 16%;
+    right: 1%;
+}
 
 #page4{
     height: 100%;
     width: 100%;
 }
+
+.particle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #B9FF66;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 1;
+    z-index: 10000;
+}
+
+#main{
+    width: 100%;
+    position: relative;
+}
+
+#particle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #B9FF66;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
 
