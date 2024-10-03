@@ -323,7 +323,6 @@ function CursorAnimation(){
         particles.forEach((particle, index) => {
             const delay = index * 0.005; 
 
-            
             gsap.to(particle, {
                 x: event.clientX - particle.clientWidth / 2, 
                 y: event.clientY - particle.clientHeight / 2, 
@@ -341,7 +340,6 @@ function CursorAnimation(){
             });
         });
     });
-
 }
 
 
