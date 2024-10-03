@@ -104,7 +104,6 @@ header {
 }
 
 #nleft img {
-   
     transform: rotate(45deg);
     block-size: 4vw;
 }
@@ -139,7 +138,7 @@ header {
     background-color: #B9FF66;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 30px rgba(186, 255, 102, 0.96);
+    box-shadow: 0 0 30px 10px rgba(186, 255, 102, 0.96);
     transition: all 0.4s ease-in-out;
 }
 
@@ -316,7 +315,7 @@ header {
     background-color: #111;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 30px rgb(14, 13, 18);
+    box-shadow: 0 0 30px 10px rgb(14, 13, 18);
     transition: all 0.4s ease-in-out;
 }
 
@@ -632,6 +631,7 @@ header {
 }
 
 .wp{
+    transition: all 0.7s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -644,7 +644,7 @@ header {
 }
 
 .wp:hover{
-    cursor: pointer;
+    cursor:none; 
 }
 
 .workProcessText{
@@ -676,6 +676,7 @@ header {
 }
 
 .workProcessIcon{
+    transition: all 0.7s ease-in-out;
     margin-right: 4vw;
     width: 60px;
     height: 60px;
@@ -700,6 +701,11 @@ header {
     margin-bottom: 2vh;
 }
 
+.wpinfo p{
+    font-weight: 500;
+    font-family: "Space Grotesk";
+}
+
 .open{
     display: flex;
     align-items: center;
@@ -719,25 +725,15 @@ header {
     right: 1%;
 }
 
+.hidden{
+    display: none;
+    opacity: 0;
+    transform: scale(0%);
+}
+
 #page4{
     height: 100%;
     width: 100%;
-}
-
-.particle {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background-color: #B9FF66;
-    border-radius: 50%;
-    pointer-events: none;
-    opacity: 1;
-    z-index: 10000;
-}
-
-#main{
-    width: 100%;
-    position: relative;
 }
 
 #particle-container {
@@ -757,4 +753,528 @@ header {
     pointer-events: none;
 }
 
+#string1, #string2, #string3, #string4, #string5, #string6:hover{
+    cursor: grabbing;
+}
 
+#Testimonials{
+    margin: 10vh 0 5vh 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 20vh;
+    gap: 5vw;
+}
+
+#tleft{
+    width: 30%;
+    display: flex;
+}
+
+#tleft h1{
+    font-size: 3vw;
+    font-family: "Space Grotesk";
+    color: #111;
+    margin-left: 12vw;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #B9FF66;
+}
+
+#tright{
+    width: 40%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: wrap;
+}
+
+#tright p{
+    font-family: "Space Grotesk";
+    color: #111;
+    margin-right: 4vw;
+}
+
+#Tcontainer{
+    margin: 0 14vw;
+    width: 70%;
+    border-radius: 45px;
+    height: 65vh;
+    padding: 5vh 0vh;
+    background-color: #191A23;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.ArrRev{
+    rotate: 180deg;
+}
+
+#Tnav{
+    display: flex;
+    gap: 10vw;
+}
+
+#Tnav img{
+    width: 20px;
+    height: 17px;
+}
+
+#Tstars{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#Tstars img{
+    height: 15px;
+    width: 12px;
+}
+
+#Tcards{
+    width: 100%;
+    display: flex;
+    gap: 2vw;
+    color: white;
+    transform: translateX(25%);
+}
+
+/*
+25 - 1
+-35 - 2
+-100 - 3
+-155 - 4
+-220 - 5
+*/
+
+.Tinfo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 3.5vw;
+    margin-top: 1vh;
+}
+
+.Tcard{
+    position: relative;
+}
+
+.Tinfo h3{
+    font-size: 1.5vw;
+    font-weight: 500;
+    font-family: "Space Grotesk";
+    margin-bottom: 1vh;
+    color: #B9FF66;
+}
+
+.Tinfo h4{
+    font-family: "Space Grotesk";
+}
+
+.Tabsolute{
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    height: 22vh;
+    width: 30vw;
+    overflow-y: scroll;
+}
+
+.Tabsolute::-webkit-scrollbar {
+    display: none;
+}
+
+body::-webkit-scrollbar{
+    background-color: #F3F3F3;
+    width: 13px;
+    border-radius: 20px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #B9FF66;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.Tabsolute{
+    font-family: "Space Grotesk";
+}
+
+#page5{
+    height: 100%;
+    width: 100%;
+}
+
+#Contact{
+    margin: 5vh 0 2vh 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 20vh;
+    gap: 5vw;
+}
+
+#Cleft{
+    width: 30%;
+    display: flex;
+}
+
+#Cleft h1{
+    font-size: 3vw;
+    font-family: "Space Grotesk";
+    color: #111;
+    margin-left: 12vw;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #B9FF66;
+}
+
+#Cright{
+    width: 30%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: wrap;
+}
+
+#Cright p{
+    font-family: "Space Grotesk";
+    color: #111;
+    margin-right: 4vw;
+}
+
+#Ccontainer{
+    margin: 0 14vw;
+    width: 70%;
+    border-radius: 45px;
+    height: 70vh;
+    padding: 5vh 0vh;
+    background-color: #F3F3F3;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+#CFRMIMG{
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.BlStr{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    right: 15%;
+}
+
+.GrStr{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    margin-top: 40vh;
+    right: 25%;
+}
+
+#CFRM{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.INPUT{
+    width: 30vw;
+    height: 6vh;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-size: 1vw;
+    font-family: "Space Grotesk";
+    padding-left: 1.5vw;
+    display: flex;
+}
+
+.INPUT::placeholder{
+    color: rgba(128, 128, 128, 0.659);
+    font-weight: 800;
+    font-family: "Space Grotesk";
+    font-size: 1vw;
+}
+
+.INPUT:focus::placeholder{
+    color: transparent;
+}
+
+#CfName label, #CEmail label, #CMessage label{
+    font-size: 1vw;
+    font-weight: 400;
+    font-family: "Space Grotesk"
+}
+
+#CfName, #CEmail, #CMessage{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6vh;
+}
+
+#Message{
+    height: 13vh;
+    width: 30vw;
+    border: 2px solid black;
+    border-radius: 20px;
+    font-size: 1vw;
+    font-family: "Space Grotesk";
+    padding: 0 1.5vw;
+    display: flex;
+    padding-top: 20px;
+}
+
+#Message::-webkit-scrollbar{
+    display: none;
+}
+
+#Message::placeholder{
+    color: rgba(128, 128, 128, 0.659);
+    font-weight: 800;
+    font-family: "Space Grotesk";
+    font-size: 1vw;
+    padding-top: 2vh;
+}
+
+#Message:focus::placeholder{
+    color: transparent;
+}
+
+#SM{
+    height: 7vh;
+    width: 30vw;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-size: 1.17vw;
+    font-family: "Space Grotesk";
+    font-weight: 600;
+    color: white;
+    background-color: #000;
+}
+
+#SM:hover{
+    box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.808);
+    cursor: pointer;
+    transition: all 0.6s ease-in-out;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    margin-left: 5vw;
+    margin-top: 2vh;
+}
+
+#rad{
+    margin-left: 5vw;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#Radio{
+    accent-color: #B9FF66;
+    height: 20px;
+    width: 20px;
+}
+
+#rad span{
+    font-family: "Space Grotesk";
+}
+
+.wp:hover{
+    background-color: #B9FF66;
+    box-shadow: 0 0 50px 10px #baff66d7;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.LearnM:hover .arrow{
+    box-shadow: 0 0 10px 3px #000;
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.LearnM:hover .arrow>img{
+    transform: rotate(30deg);
+    transition: all 0.5s ease-in-out;
+}
+
+#Footer{
+    height: 60vh;
+    color: white;
+    margin-top: 20vh;
+    margin-left: 10vw;
+    width: 80%;
+    border-radius: 45px 45px 0px 0px;
+    border-top: #000;
+    background-color: #191A23;
+    padding: 40px;
+}
+
+#Linkedin img{
+    height: 30px;
+    filter: invert();
+}
+
+#Github img:hover, #Linkedin img:hover{
+    transform: scale(1.35);
+    transition: all 0.4s ease-in-out;
+}
+
+#Github img{
+    height: 30px;
+    filter: invert();
+}
+
+#Fnav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+}
+
+#Fleft{
+    display: flex;
+    gap: 1.3vw;
+    align-items: center;
+}
+
+#Fleft img{
+    height: 55px;
+}
+
+#Fleft h2{
+    font-size: 2.4vw;
+    font-family: "Space Grotesk";
+    color: #B9FF66;
+}
+
+#Fright{
+    display: flex;
+    gap: 3vw;
+    align-items: center;
+}
+
+#STRING{
+    filter: invert();
+    margin-left: 3vw;
+}
+
+#Fcont{
+    margin-top: 50px;
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#CoAdd{
+    padding-left: 5vw;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3vw;
+}
+
+#CoAdd h1{
+    width: fit-content;
+    padding: 0 6px;
+    border-radius: 8px;
+    font-size: 1.7vw;
+    color: #000;
+    font-weight: 500;
+    background-color: #B9FF66;
+    font-family: "Space Grotesk";
+}
+
+#CoAdd p{
+    font-size: 0.8vw;
+    font-family: "Space Grotesk";
+}
+
+#CoCard{
+    width: 50%;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.3vw;
+    background-color: #292A32;
+    height: 20vh;
+    margin-right: 6vw;
+}
+
+#Subscribe{
+    width: 40%;
+    height: 8vh;
+    background-color: #B9FF66;
+    border-radius: 20px;
+    font-size: 1.1vw;
+    font-family: "Space Grotesk";
+    font-weight: 500;
+}
+
+#Subscribe:hover{
+    box-shadow: 0 0 10px 3px #baff66d7;
+    cursor: pointer;
+    transition: all 0.6s ease-in-out;
+}
+
+#CoCard input{
+    width: 40%;
+    height: 8vh;
+    border-radius: 15px;
+    border: 2px solid white;
+    background-color: #191A23;
+    font-size: 1.1vw;
+    font-family: "Space Grotesk";
+    padding-left: 1.5vw;
+    color: white;
+}
+
+#CoCard input::placeholder{
+    color: white;
+    font-size: 1.1vw;
+    font-family: "Space Grotesk";
+    font-weight: 400;
+    padding-left: 1.5vw;
+}
+
+#CoCard input:focus::placeholder{
+    color: transparent;
+}
+
+#CoCard input:focus{
+    box-shadow: 0 0 50px 2px #fff;
+}
+
+#FinalFooter{
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+    padding-left: 3.6vw;
+}
+
+#PrPolicy, #RR-2023{
+    font-size: 0.8vw;
+    font-family: "Space Grotesk";
+}
+
+#PrPolicy:hover, #RR-2023:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
