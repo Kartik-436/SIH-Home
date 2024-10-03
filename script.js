@@ -306,7 +306,7 @@ function Page2Animation(){
 
 function CursorAnimation(){
 
-    const numParticles = 35;
+    const numParticles = 50;
     const particleContainer = document.getElementById('particle-container');
     const particles = [];
 
@@ -321,7 +321,7 @@ function CursorAnimation(){
 
     window.addEventListener("mousemove", (event) => {
         particles.forEach((particle, index) => {
-            const delay = index * 0.005; 
+            const delay = index * 0.0015; 
 
             gsap.to(particle, {
                 x: event.clientX - particle.clientWidth / 2, 
@@ -779,6 +779,77 @@ function FooterStringAnimation(){
 }
 
 
+function TestimonialAnimation(){
+    let currentTestimonial = 0;
+    const totalTestimonials = 5;  
+    const testimonialContainer = document.getElementById("Tcards");
+
+    
+    const testimonialPositions = [0, -60, -120, -180, -240];
+
+    
+    document.querySelector('.ArrRight').addEventListener('click', () => {
+        if (currentTestimonial < totalTestimonials - 1) {
+            currentTestimonial++;
+            gsap.to(testimonialContainer, {
+                duration: 1,
+                xPercent: testimonialPositions[currentTestimonial], 
+                ease: "power1.out"
+            });
+        }
+
+        else if (currentTestimonial == totalTestimonials - 1) {
+            currentTestimonial = 0;
+            gsap.to(testimonialContainer, {
+                duration: 1,
+                xPercent: testimonialPositions[0],
+                ease: "power1.out"
+            });
+        }
+    });
+
+    
+    document.querySelector('.ArrLeft').addEventListener('click', () => {
+        if (currentTestimonial > 0) {
+            currentTestimonial--;
+            gsap.to(testimonialContainer, {
+                duration: 1,
+                xPercent: testimonialPositions[currentTestimonial],
+                ease: "power1.out"
+            });
+        }
+
+        else if (currentTestimonial == 0) {
+            currentTestimonial = 4;
+            gsap.to(testimonialContainer, {
+                duration: 1,
+                xPercent: testimonialPositions[4],
+                ease: "power1.out"
+            });
+        }
+    });
+
+    
+    document.querySelectorAll('#Tstars img').forEach((star, index) => {
+        star.addEventListener('click', () => {
+            currentTestimonial = index;  
+            gsap.to(testimonialContainer, {
+                // opacity: 0.4,
+                duration: 1,
+                xPercent: testimonialPositions[currentTestimonial],
+                ease: "power1.out",
+                // onComplete: function () {
+                //     gsap.to(testimonialContainer, {
+                //         opacity: 1,
+                //     })
+                // },
+            });
+        });
+    });
+
+}
+
+
 window.onload = async function () {
     document.querySelector(".preloader").classList.add("hide");
 
@@ -853,6 +924,7 @@ window.onload = async function () {
             Page5Animation()
             FooterStringAnimation()
             FooterAnimation()
+            TestimonialAnimation()
         },
     });
 };

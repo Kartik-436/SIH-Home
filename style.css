@@ -810,7 +810,7 @@ header {
     overflow: hidden;
 }
 
-.ArrRev{
+.ArrLeft{
     rotate: 180deg;
 }
 
@@ -819,9 +819,11 @@ header {
     gap: 10vw;
 }
 
-#Tnav img{
-    width: 20px;
-    height: 17px;
+.Tarrow{
+    width: 35px;
+    height: 35px;
+    padding: 8px;
+    border-radius: 50%;
 }
 
 #Tstars{
