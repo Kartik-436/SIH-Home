@@ -321,13 +321,13 @@ function CursorAnimation(){
 
     window.addEventListener("mousemove", (event) => {
         particles.forEach((particle, index) => {
-            const delay = index * 0.02; 
+            const delay = index * 0.005; 
 
             
             gsap.to(particle, {
                 x: event.clientX - particle.clientWidth / 2, 
                 y: event.clientY - particle.clientHeight / 2, 
-                duration: 0.5,
+                duration: 0.2,
                 opacity: 1, 
                 ease: "power3.out",
                 delay: delay, 
