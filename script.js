@@ -747,8 +747,8 @@ function FooterAnimation(){
 
 
 function FooterStringAnimation(){
-    var initialPath = `M 10 50 Q 600 50 1100 50`;
-    var Path = `M 10 50 Q 600 50 1100 50`;
+    var initialPath = `M 10 50 Q 525 50 1050 50`;
+    var Path = `M 10 50 Q 525 50 1050 50`;
 
     var STRING = document.querySelector("#StringFinal");
 
