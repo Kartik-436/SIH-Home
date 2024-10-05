@@ -335,7 +335,7 @@ function CursorAnimation(){
             
             gsap.to(particle, {
                 opacity: 0,
-                delay: delay + 0.5, 
+                delay: delay, 
                 duration: 0.7,
             });
         });
@@ -779,74 +779,171 @@ function FooterStringAnimation(){
 }
 
 
-function TestimonialAnimation(){
+function TestimonialAnimation() {
     let currentTestimonial = 0;
     const totalTestimonials = 5;  
     const testimonialContainer = document.getElementById("Tcards");
 
-    
     const testimonialPositions = [0, -60, -120, -180, -240];
 
-    
+
+    function updateStarColors() {
+        document.querySelectorAll('#Tstars svg').forEach((star, index) => {
+            if (index === currentTestimonial) {
+                gsap.to(star, {
+                    duration: 0.2,
+                    fill: "#B9FF66",
+                });
+            } else {
+                gsap.to(star, {
+                    duration: 0.2,
+                    fill: "white",
+                });
+            }
+        });
+    }
+
     document.querySelector('.ArrRight').addEventListener('click', () => {
         if (currentTestimonial < totalTestimonials - 1) {
             currentTestimonial++;
-            gsap.to(testimonialContainer, {
-                duration: 1,
-                xPercent: testimonialPositions[currentTestimonial], 
-                ease: "power1.out"
-            });
-        }
-
-        else if (currentTestimonial == totalTestimonials - 1) {
+        } else {
             currentTestimonial = 0;
-            gsap.to(testimonialContainer, {
-                duration: 1,
-                xPercent: testimonialPositions[0],
-                ease: "power1.out"
-            });
         }
+        
+        gsap.to(testimonialContainer, {
+            duration: 1,
+            xPercent: testimonialPositions[currentTestimonial], 
+            ease: "power1.out"
+        });
+        
+        updateStarColors();
     });
 
-    
     document.querySelector('.ArrLeft').addEventListener('click', () => {
         if (currentTestimonial > 0) {
             currentTestimonial--;
-            gsap.to(testimonialContainer, {
-                duration: 1,
-                xPercent: testimonialPositions[currentTestimonial],
-                ease: "power1.out"
-            });
+        } else {
+            currentTestimonial = totalTestimonials - 1;
         }
 
-        else if (currentTestimonial == 0) {
-            currentTestimonial = 4;
-            gsap.to(testimonialContainer, {
-                duration: 1,
-                xPercent: testimonialPositions[4],
-                ease: "power1.out"
-            });
-        }
+        gsap.to(testimonialContainer, {
+            duration: 1,
+            xPercent: testimonialPositions[currentTestimonial],
+            ease: "power1.out"
+        });
+        
+        updateStarColors();
     });
 
-    
-    document.querySelectorAll('#Tstars img').forEach((star, index) => {
+    let currentStar = null;
+
+    document.querySelectorAll('#Tstars svg').forEach((star, index) => {
         star.addEventListener('click', () => {
+            if (currentStar) {
+                gsap.to(currentStar, {
+                    duration: 0.2,
+                    fill: "white",
+                });
+            }
+
+            gsap.to(star, {
+                duration: 0.2,
+                fill: "#B9FF66",
+            });
+
+            currentStar = star; 
             currentTestimonial = index;  
+
             gsap.to(testimonialContainer, {
-                // opacity: 0.4,
                 duration: 1,
                 xPercent: testimonialPositions[currentTestimonial],
                 ease: "power1.out",
-                // onComplete: function () {
-                //     gsap.to(testimonialContainer, {
-                //         opacity: 1,
-                //     })
-                // },
             });
+
+            updateStarColors();
         });
     });
 
+    updateStarColors();
+}
+
+
+function Page2BAnimation(){
+    var tl2b = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#page2B",
+            scroller: "body",
+            start: "top 80%",
+            end: "top 40%",
+            scrub: 2,
+        }
+    })
+
+    tl2b.from("#page2B", {
+        duration: 1,
+        opacity: 0,
+        y: 100,
+        ease: "power3.out",
+    })
+
+    tl2b.from("#page2B h1", {
+        duration: 1,
+        opacity: 0,
+        y: -100,
+        ease: "power3.out",
+        // onComplete: function(){
+        //     page2b = document.querySelector("#page2B")
+        //     page2b.addEventListener("mousemove",
+        //         throttleFunction((dets) => {
+        //             var bBox = page2b.getBoundingClientRect();
+        //             var relX =  dets.clientX - bBox.left;
+        //             var relY =  dets.clientY - bBox.top;
+
+        //             var div = document.createElement("div")
+        //             div.classList.add("div-Image")
+        //             div.style.left = relX + "px";
+        //             div.style.top = relY + "px";
+
+        //             var image = document.createElement("img")
+        //             image.classList.add("div-Image")
+        //             image.setAttribute("src", "https://images.unsplash.com/photo-1727255957966-63586400e572?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+        //             div.appendChild(image);
+        //             page2b.appendChild(div);
+
+        //             gsap.to(".div-Image img", {
+        //                 y: 0,
+        //                 duration: 0.4,
+        //                 ease: "power2",
+        //             })
+
+        //             gsap.to(".div-Image img", {
+        //                 y: "100%",
+        //                 delay: 0.5,
+        //                 ease: "power2",
+        //                 duration: 0.3,
+        //             })
+
+        //             setTimeout(() => {
+        //                 div.remove();
+        //             }, 1100);
+
+        //         }, 300));
+        // }
+    })
+}
+
+
+const throttleFunction = (func, delay) => {
+    let prev = 0;
+    return (...args) => {
+        let now = new Date().getTime();
+
+        if (now - prev > delay) {
+            prev = now;
+
+            return func(...args);
+        }
+    }
 }
 
 
@@ -925,6 +1022,7 @@ window.onload = async function () {
             FooterStringAnimation()
             FooterAnimation()
             TestimonialAnimation()
+            Page2BAnimation()
         },
     });
 };
