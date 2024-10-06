@@ -918,17 +918,17 @@ function createPopImage(x, y) {
 
     gsap.set(img, {
         x: x - 550,
-        y: y,
+        y: y + 100,
         rotation: randomRotation
     });
 
     gsap.to(img, {
-        duration: 1,
+        duration: 1.3,
         y: y - 120,
-        ease: 'elastic.out(1, 0.5)',
+        ease: 'elastic.out(1.2, 0.75)',
         onComplete: () => {
             gsap.to(img, {
-                duration: 0.6,
+                duration: 0.8,
                 y: y + 150,
                 ease: 'power1.in',
                 onComplete: () => {
@@ -986,14 +986,6 @@ function getRandomImageUrl() {
     const randomIndex = Math.floor(Math.random() * imageUrls.length);
     return imageUrls[randomIndex];
 }
-
-
-document.querySelector("#page2B").addEventListener('mousemove', throttle((e) => {
-    const rect = e.target.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    createPopImage(x, y);
-}, 300));
 
 
 window.onload = async function () {
@@ -1072,6 +1064,13 @@ window.onload = async function () {
             FooterAnimation()
             TestimonialAnimation()
             Page2BAnimation()
+
+            document.querySelector("#page2B").addEventListener('mousemove', throttle((e) => {
+                const rect = e.target.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                createPopImage(x, y);
+            }, 300));
         },
     });
 };

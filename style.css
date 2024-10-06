@@ -1310,8 +1310,13 @@ form{
     user-select: none;
 }
 
+#page2B:hover{
+    cursor: auto;
+    box-shadow: 0 0 60px 30px #baff66f9;
+}
+
 #page2B h1{
-    font-size: 3.6vw;
+    font-size: 4vw;
     font-family: "Space Grotesk";
     color: #000000;
     font-weight: 900;
@@ -1320,9 +1325,11 @@ form{
 
 .pop-image {
     position: absolute;
+    border-radius: 10px;
     width: 200px;
     height: 250px;
     object-fit: cover;
+    object-position: center;
     pointer-events: none;
     opacity: 1;
     user-select: none;
