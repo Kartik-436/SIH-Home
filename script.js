@@ -925,12 +925,14 @@ function createPopImage(x, y) {
     gsap.to(img, {
         duration: 1.3,
         y: y - 120,
-        ease: 'elastic.out(1.2, 0.75)',
+        opacity: 1,
+        stagger: 0.2,
+        ease: 'elastic.out(1, 0.5)',
         onComplete: () => {
             gsap.to(img, {
                 duration: 0.8,
-                y: y + 150,
-                ease: 'power1.in',
+                y: y + 200,
+                ease: 'power3.inOut',
                 onComplete: () => {
                     img.remove();
                 }
@@ -1070,7 +1072,7 @@ window.onload = async function () {
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
                 createPopImage(x, y);
-            }, 300));
+            }, 400));
         },
     });
 };
