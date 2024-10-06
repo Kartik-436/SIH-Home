@@ -1067,6 +1067,47 @@ window.onload = async function () {
             TestimonialAnimation()
             Page2BAnimation()
 
+            Shery.mouseFollower({
+                skew: true,
+                ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+                duration: 1,
+            });
+
+            Shery.makeMagnet("button", {
+                ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+                duration: 1,
+            });
+
+            Shery.makeMagnet("#animatedText", {
+                ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+                duration: 1,
+            });
+
+            Shery.makeMagnet(".LearnM", {
+                ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+                duration: 1,
+            });
+                        
+            Shery.makeMagnet(".wp", {
+                ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+                duration: 1,
+            });
+            
+            Shery.makeMagnet(".Tarrow", {
+                ease: "cubic-bezier(0.23, 1, 0.320, 1)", 
+                duration: 1,
+            })
+
+            Shery.makeMagnet("#Fright", {
+                ease: "cubic-bezier(0.23, 1, 0.320, 1)", 
+                duration: 1,
+            })
+
+            Shery.makeMagnet("#FinalFooter", {
+                ease: "cubic-bezier(0.23, 1, 0.320, 1)", 
+                duration: 1,
+            })
+
             document.querySelector("#page2B").addEventListener('mousemove', throttle((e) => {
                 const rect = e.target.getBoundingClientRect();
                 const x = e.clientX - rect.left;
