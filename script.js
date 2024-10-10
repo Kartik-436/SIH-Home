@@ -1108,6 +1108,11 @@ window.onload = async function () {
                 duration: 1,
             })
 
+            Shery.makeMagnet("#Fleft h2", {
+                ease: "cubic-bezier(0.23, 1, 0.320, 1)", 
+                duration: 1,
+            })
+
             document.querySelector("#page2B").addEventListener('mousemove', throttle((e) => {
                 const rect = e.target.getBoundingClientRect();
                 const x = e.clientX - rect.left;
