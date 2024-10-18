@@ -908,39 +908,39 @@ function throttle(fn, limit) {
 
 
 function createPopImage(x, y) {
+    const div = document.createElement('div');
+    div.classList.add('pop-div');
+
     const img = document.createElement('img');
     img.src = getRandomImageUrl();
     img.classList.add('pop-image');
 
-    document.querySelector('#page2B').appendChild(img);
+    div.appendChild(img);
+    document.querySelector('#page2B').appendChild(div);
 
     const randomRotation = Math.random() * 30 - 15;
 
-    gsap.set(img, {
-        x: x - 550,
-        y: y + 100,
+    gsap.set(div, {
+        x: x, 
+        y: y, 
         rotation: randomRotation
     });
 
     gsap.to(img, {
-        duration: 1.3,
-        y: y - 120,
+        duration: 1,
+        y: '-80%',
         opacity: 1,
-        stagger: 0.2,
-        ease: 'elastic.out(1, 0.5)',
+        ease: 'elastic.out(1.2, 0.75)',
         onComplete: () => {
             gsap.to(img, {
                 duration: 0.8,
-                y: y + 200,
+                y: '250%',
                 ease: 'power3.inOut',
-                onComplete: () => {
-                    img.remove();
-                }
+                onComplete: () => div.remove(),
             });
         }
     });
 }
-
 
 const imageUrls = [
     "https://images.unsplash.com/photo-1636152147448-a0a9ad1119bd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -1114,11 +1114,11 @@ window.onload = async function () {
             })
 
             document.querySelector("#page2B").addEventListener('mousemove', throttle((e) => {
-                const rect = e.target.getBoundingClientRect();
+                const rect = document.querySelector("#page2B").getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
                 createPopImage(x, y);
-            }, 400));
+            }, 250));
         },
     });
 };

@@ -1312,7 +1312,7 @@ form{
 
 #page2B:hover{
     cursor: auto;
-    box-shadow: 0 0 60px 30px #baff66f9;
+    box-shadow: 0 0 50px 30px #baff66f9;
 }
 
 #page2B h1{
@@ -1323,9 +1323,9 @@ form{
     user-select: none;
 }
 
+
 .pop-image {
-    position: absolute;
-    border-radius: 10px;
+    position: relative;
     width: 200px;
     height: 250px;
     object-fit: cover;
@@ -1333,8 +1333,25 @@ form{
     pointer-events: none;
     opacity: 0.6;
     user-select: none;
+    will-change: transform, opacity;
+}
+
+.pop-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, 0%);
+    background-color: transparent;
+    clip-path: inset(-300px 0px -5px 0px);
+    user-select: none;
+    will-change: transform, opacity;
 }
 
 #Tstars:hover{
     cursor: pointer;
+}
+
+#MAIN{
+    height: 100%;
+    width: 100%;
 }
